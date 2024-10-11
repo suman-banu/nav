@@ -1,0 +1,107 @@
+/* Basic styling for the navigation */
+nav {
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.class1, .class2, .class3 {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo section */
+.logo h1 {
+    font-size: 24px;
+}
+
+/* Navigation links */
+.class2 .dropdown {
+    position: relative;
+    margin-left: 20px;
+}
+
+.class2 .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.class2 .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Icons section */
+.icon i {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hamburger i {
+    color: #333;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Toggle the menu when the checkbox is checked */
+input[type="checkbox"]:checked ~ .class2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .class2 {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .class1, .class3 {
+        /* flex-grow: 1; */
+        justify-content: space-between;
+    }
+
+    /* Full-width dropdown links on smaller screens */
+    .class2 .dropdown-content {
+        position: static;
+        box-shadow: none;
+    }
+
+    .class2 .dropdown-content a {
+        display: block;
+        padding: 10px;
+    }
+
+    /* Show navigation when checkbox is checked */
+    input[type="checkbox"]:checked ~ .class2 {
+        display: flex;
+    }
+}
